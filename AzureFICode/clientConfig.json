@@ -1,0 +1,11 @@
+{
+	"OpenHour": 9,
+	"CloseHour": 17,
+	"RunDays": ["Monday", "TuesDay", "Wednesday", "Thursday"],
+	"RulesBufferTime": 60,
+	"CrawlerFrquency": 15,
+	"SchedulerFrequency": 30,
+	"MaxActionsPerDayOnResource": 3,
+	"NotificationsEnabled":true,
+	"NotificationRecipients": ["test@abc.com","running@test.com"]
+}

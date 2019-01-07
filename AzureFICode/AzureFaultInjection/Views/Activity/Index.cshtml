@@ -1,0 +1,48 @@
+﻿<div class="activity">
+  <h2>Activity Report</h2>
+  <div class="container">
+    <div class='col-md-3'>
+      <div class="form-group">
+        <div class='input-group date' id='activityFromDate'>
+          <input type='text' class="form-control" placeholder="From Date" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class="form-group">
+        <div class='input-group date' id='activityToDate'>
+          <input type='text' class="form-control" placeholder="To Date" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-2'>
+      <div class="form-group">
+        <input type='button' class="form-control" value="Search" id="activitySearch" />
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-bordered" id="activity">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Resource Name</th>
+        <th scope="col">Fault Operation</th>
+        <th scope="col">Fault Start Time</th>
+        <th scope="col">Fault End Time</th>
+        <th scope="col">Initial State</th>
+        <th scope="col">Final State</th>
+        <th scope="col">Status</th>
+        <th scope="col">Error</th>
+        <th scope="col">Warning</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>

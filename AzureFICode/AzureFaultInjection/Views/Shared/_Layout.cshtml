@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>@ViewBag.Title</title>
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css'>
+
+  @Styles.Render("~/Content/css")
+  @Scripts.Render("~/bundles/jquery")
+  @Scripts.Render("~/bundles/bootstrap")
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-header pull-left">
+          <img src="~/Content/images/azurelogo.png" alt="Site Logo" style="height:50px; width: 50px" />
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        @Html.ActionLink("Azure FI", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+          <li>@Html.ActionLink("Schedules", "Index", "Schedule", new { area = "" }, null)</li>
+          <li>@Html.ActionLink("Activities", "Index", "Activity", new { area = "" }, null)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+      <p>&copy; Microsoft @DateTime.Now.Year</p>
+    </footer>
+  </div>
+  <script src="~/Scripts/js/index.js"></script>
+  <script src="~/Scripts/js/event-helper.js"></script>
+  <script src="~/Scripts/js/reports.js"></script>
+  <script src="~/Scripts/js/tooltip.js"></script>
+  @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<div class="schedule">
+  <h2>Schedule Report</h2>
+  <div>
+    <div class='col-md-3'>
+      <div class="form-group">
+        <div class='input-group date' id='scheduleFromDate'>
+          <input type='text' class="form-control" placeholder="From Date" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class="form-group">
+        <div class='input-group date' id='scheduleToDate'>
+          <input type='text' class="form-control" placeholder="To Date" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-2'>
+      <div class="form-group">
+        <input type='button' class="form-control" value="Search" id="scheduleSearch" />
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-bordered" id="schedule">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Resource Name</th>
+        <th scope="col">Scheduled Time</th>
+        <th scope="col">Azure FI Action</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>

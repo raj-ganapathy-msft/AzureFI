@@ -1,0 +1,48 @@
+{
+  "ClientConfig": {
+    /*will allow chaos on multiple subscriptions?*/
+    "microsoft.chaos.client.subscription.id": "470546b8-4d7f-4c0e-ae30-489e29c7cb43",
+    "microsoft.chaos.client.tenant.id": "99b5d273-16d0-460f-8d7a-fa3cadd3913a",
+    "microsoft.chaos.client.id": "f7ef7b09-6213-4b58-a207-7a90df389822",
+    "microsoft.chaos.client.secretKey": "NDC93m7tV7/F6NbCX3gfbqSVeHK3DtxS+ggX11hbHKk=",
+    "microsoft.chaos.client.storageAccount.Name": "stachaosstorage",
+	"microsoft.chaos.client.region": "East US",
+	"microsoft.chaos.client.resourceGroup":"Chaos_Monkey_RG"
+  },
+  "microsoft.chaos.client.table.resourceGroupCrawler": "tblchaosresourcegroup",
+  "microsoft.chaos.client.table.virtualMachineCrawler": "tblchaosvirtualmachines",
+  "microsoft.chaos.client.table.availabilitySetCrawler": "tblchaosavailabilityset",
+  "microsoft.chaos.client.table.scaleSetCrawler": "tblchaosscalesets",
+  "microsoft.chaos.client.table.availabilityZoneCrawler": "tblchaosavailabilityzone",
+  "microsoft.chaos.client.table.activityLog": "tblchaosactivitylog",
+  "ChaosConfig": {
+    "microsoft.chaos.enabled": true,
+    "microsoft.chaos.leashed": true,
+    "microsoft.chaos.blackListedResources": [
+      "/subscriptions/470546b8-4d7f-4c0e-ae30-489e29c7cb43/resourceGroups/Chaos_Monkey_RG/providers/Microsoft.Compute/virtualMachines/WindowsCM" /*id of the resource*/
+    ],
+
+    "microsoft.chaos.blackListedResourceGroups": null,
+    "microsoft.chaos.resourceGroups": "all", /* default will be all, can mention the multiple resource group with comma separated ex. rg1,rg2,rg3*/
+    "microsoft.chaos.notification.global.enabled": false,
+    "microsoft.chaos.notification.sourceEmail": "chaos@domail.com",
+    "microsoft.chaos.notification.global.receiverEmail": "chaosgroup@domain.com",
+    "microsoft.chaos.AZ": {
+      "microsoft.chaos.AZ.enabled": true,
+      "microsoft.chaos.AZ.regions": [ "eastus2", "centralus", "westeurope" ]
+    },
+    "microsoft.chaos.VM": {
+      "microsoft.chaos.VM.enabled": true,
+      "microsoft.chaos.singleInstanceVm.percentageTermination": 50
+    },
+    "microsoft.chaos.SS": {
+      "microsoft.chaos.VM.enabled": true,
+      "microsoft.chaos.SS.percentageTermination": 50
+    },
+    "microsoft.chaos.AS": {
+	  "microsoft.chaos.AS.enabled": true,
+      "microsoft.chaos.AS.faultDomain.enabled": true,
+      "microsoft.chaos.AS.updateDomain.enabled": false
+    }
+  }
+}

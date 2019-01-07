@@ -1,0 +1,42 @@
+.multi-step-form {
+	
+	.no-js &, &.edit-form {
+		fieldset button, h2 { display: none !important; }
+		fieldset { display: block !important; }
+		[type="submit"], [type="reset"] { display: inline-block !important; }
+		.steps { display: none; }
+	}
+	
+	
+	fieldset {
+		display: none;
+		&:first-of-type { display: block; }
+		&.hidden { display: none; }
+		&.visible { display: block; }
+	}
+	
+	.steps {
+		button { border: 0; }
+		[disabled]{ background: none; }
+		.active { background: #eee; }
+	}
+	
+}
+
+
+
+
+
+
+
+// demo styles
+body {
+	padding: 1em;
+	max-width: 35em;
+	margin: 0 auto;
+}
+.error { color: red; }
+label .optional {
+	font-weight: normal;
+	font-size: 90%;
+}

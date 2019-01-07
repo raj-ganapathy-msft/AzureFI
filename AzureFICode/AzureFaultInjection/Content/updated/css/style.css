@@ -1,0 +1,57 @@
+.no-js .multi-step-form fieldset button, .no-js .multi-step-form h2, .multi-step-form.edit-form fieldset button, .multi-step-form.edit-form h2 {
+  display: none !important;
+}
+.no-js .multi-step-form fieldset, .multi-step-form.edit-form fieldset {
+  display: block !important;
+}
+.no-js .multi-step-form [type="submit"], .no-js .multi-step-form [type="reset"], .multi-step-form.edit-form [type="submit"], .multi-step-form.edit-form [type="reset"] {
+  display: inline-block !important;
+}
+.no-js .multi-step-form .steps, .multi-step-form.edit-form .steps {
+  display: none;
+}
+.multi-step-form fieldset {
+  display: none;
+}
+.multi-step-form fieldset:first-of-type {
+  display: block;
+}
+.multi-step-form fieldset.hidden {
+  display: none;
+}
+.multi-step-form fieldset.visible {
+  display: block;
+}
+.multi-step-form .steps button {
+  border: 0;
+}
+.multi-step-form .steps [disabled] {
+  background: none;
+}
+.multi-step-form .steps .active {
+    background: #666;
+}
+.breadcrumb {
+    height: 37px;
+}
+.steps {
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    /*margin: 0;*/
+    padding: 0;
+}
+/*body {
+  padding: 1em;
+  max-width: 35em;
+  margin: 0 auto;
+}*/
+
+.error {
+  color: red;
+}
+label .optional {
+    font-weight: normal;
+    font-size: 90%;
+}

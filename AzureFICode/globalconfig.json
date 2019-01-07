@@ -1,0 +1,19 @@
+{	
+	"AzureChaosMonkeyEnable": true,
+	"VirtualMachinesEnabled": true,
+	"AvailabileSetsEnabled": true,
+	"VirtualMachinesScaleSetsEnabled": true,
+	"StorageEnabled": false,
+	"DisksEnabled": false,
+	"KillResource":false,
+	"VMPercentInAvailabilitySetsForChaosing": 29,
+	"VMPercentForParallelExecution": 47,
+	"FaultDomainEnable":true,
+	"DefaultFaultDomains": 2,
+	"DefaultUpdateDomains" 5,
+	"UpdateDomainEnable":false,
+	"AvailabilityZonesEnabled": true,
+	"DefaultResourceGroup": ".azureChaosMonkey",
+	"BlackListedResources":["/subscriptions/470546b8-4d7f-4c0e-ae30-489e29c7cb43/resourceGroups/zen3/providers/Microsoft.Compute/virtualMachines/cm-zen3"],
+	"BlackListedResourceGroups":[".azureChaosMonkey",".cm"]	
+}

@@ -1,0 +1,132 @@
+﻿.body-content {
+    margin-top: 60px;
+}
+
+.steps {
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0
+}
+
+    .steps li {
+        color: #b0b1b3;
+        font-size: 24px;
+        float: left;
+        padding: 10px;
+        transition: all .3s;
+        -moz-transition: all .3s;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s
+    }
+
+        .steps li span {
+            font-size: 11px;
+            display: block
+        }
+
+        .steps li.current {
+            color: #000
+        }
+
+.breadcrumbv1 {
+    height: 37px
+}
+
+    .breadcrumbv1 li {
+        background: #eee;
+        font-size: 14px
+    }
+
+        .breadcrumbv1 li.active:after {
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent;
+            border-left: 6px solid #666;
+            content: ' ';
+            position: absolute;
+            top: 0;
+            right: -6px
+        }
+
+        .breadcrumbv1 li.active {
+            background: #666;
+            color: #eee;
+            position: relative
+        }
+
+        .breadcrumbv1 li:last-child:after {
+            border: none
+        }
+
+.section {
+    margin: 0 0 10px;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+
+.glyphicon.glyphicon-question-sign {
+    padding-left: 5px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.button-overlap {
+    display: inline-block;
+    position: relative;
+    outline: none;
+    float: right;
+}
+
+
+label {
+    font-weight: normal !important;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+
+.config-tab-header {
+    background-color: #555;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.current {
+    color: #000;
+}
+
+.tab-header {
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px;
+    color: #B0B1B3;
+    margin-right: 20px;
+}
+
+.tabs {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100%;
+    font-weight: 300;
+    font-size: 1.25em;
+}
+
+.schedule h2, .activity h2 {
+    margin-bottom: 50px;
+}
+.schedule .col-md-3, .activity .col-md-3 {
+    padding-left: 0;
+}
+.required{
+    color: red;
+}

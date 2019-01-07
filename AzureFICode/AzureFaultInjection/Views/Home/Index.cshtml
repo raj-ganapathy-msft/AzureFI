@@ -1,0 +1,205 @@
+﻿<section class="multi-step-form">
+
+  <ul class="steps breadcrumbv1">
+    <li class="active">Authenticate</li>
+    <li>Resource Group(s) Selection</li>
+    <li>FI Scope</li>
+    <li>FI Settings</li>
+  </ul>
+  <div class="modal" style="display: none">
+    <div class="center">
+      <img src="~/Content/images/loader.gif" />
+    </div>
+  </div>
+  <form action="#" method="post" id="multiwizard">
+    <fieldset aria-label="Step One" tabindex="-1" id="step-1">
+      <h4></h4>
+      <div class="section">
+        <label for="tenant-id">
+          Tenant Id
+        </label><span class="required">*</span><div class="glyphicon glyphicon-question-sign" id="tooltip-tenant-id"></div>
+        <input class="form-control" type="text" name="tenantId" id="tenant-id" required>
+      </div>
+      <div class="section">
+        <label for="client-id">Application Id</label><span class="required">*</span><div class="glyphicon glyphicon-question-sign" id="tooltip-client-id"></div>
+        <input class="form-control" type="text" name="clientId" id="client-id" required>
+      </div>
+      <div class="section">
+        <label for="client-secret">Application Secret Key</label><span class="required">*</span><div class="glyphicon glyphicon-question-sign" id="tooltip-client-secret"></div>
+        <input class="form-control" type="text" name="clientSecret" id="client-secret" required>
+      </div>
+      <p class="button-overlap">
+        <button class="btn btn-default btn-next" type="button" aria-controls="step-2">Next</button>
+      </p>
+    </fieldset>
+
+    <fieldset aria-label="Resource Selections" tabindex="-1" id="step-2">
+      <h4></h4>
+      <div class="section">
+        <label for="subscription">Subscription</label><span class="required">*</span><div class="glyphicon glyphicon-question-sign" id="tooltip-subscription"></div>
+        <select class="form-control" id="selectSubscription" name="subscription" required></select>
+      </div>
+      <div class="section">
+        <label for="excluded-resource-groups">Excluded Resource Group(s)</label><div class="glyphicon glyphicon-question-sign" id="tooltip-exclude-resourcegroups"></div>
+        <select class="form-control" multiple="multiple" id="excluded-resource-groups" name="excludedResourceGroups"></select>
+      </div>
+      <p class="button-overlap">
+        <button class="btn btn-default btn-prev" type="button" aria-controls="step-1">Previous</button>
+        <button class="btn btn-default btn-next" type="button" aria-controls="step-3">Next</button>
+      </p>
+    </fieldset>
+    <fieldset aria-label="Step Three" tabindex="-1" id="step-3">
+      <div class="panel-group panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Single Virtual Machines</h4>
+        </div>
+        <div class="panel-collapse collapse in panel-body">
+          <div class="section">
+            <label for="vm-percentage">Virtual Machines Percentage</label><div class="glyphicon glyphicon-question-sign" id="tooltip-vm-percentage"></div>
+            <input type="number" class="form-control" value="50" min="0" max="100" name="vmPercentage" id="vm-percentage" required>
+          </div>
+          <div class="form-inline">
+            <input type="checkbox" class="form-check-input" name="isVmEnabled" id="vm-enabled">
+            <label for="vm-enabled">Allow Fault Injection</label>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Availability Sets<div class="glyphicon glyphicon-question-sign" id="tooltip-availability-sets"></div></h4>
+        </div>
+        <div class="panel-collapse collapse in panel-body">
+          <div class="form-inline">
+            <input type="checkbox" class="form-check-input" name="isAvSetEnabled" id="avset-enabled">
+            <label for="avset-enabled">Allow Fault Injection</label>
+          </div>
+          <div class="form-inline">
+            <input type="radio" class="form-check-input" name="isFaultOrUpdateDomainEnabled" id="isFaultDomainEnabled">
+            <label for="fault-domain">Enable Fault Domain</label>
+            <input type="radio" class="form-check-input" name="isFaultOrUpdateDomainEnabled" id="isUpdateDomainEnabled">
+            <label for="update-domain">Enable Update Domain</label>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Availability Zones(VM(s) and VMSS)<div class="glyphicon glyphicon-question-sign" id="tooltip-availability-zones"></div></h4>
+        </div>
+        <div class="panel-collapse collapse in panel-body">
+          <div class="form-inline">
+            <input type="checkbox" class="form-check-input" name="isAvZoneEnabled" id="avzone-enabled">
+            <label for="avzone-enabled">Allow Fault Injection</label>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Regional Virtual Machine Scale Sets</h4>
+        </div>
+        <div class="panel-collapse collapse in panel-body">
+          <div class="section">
+            <label for="vmss-percentage">VM Scale Set instance Percentage</label><div class="glyphicon glyphicon-question-sign" id="tooltip-vmss-percentage"></div>
+            <input type="number" class="form-control" value="50" min="0" max="100" name="vmssPercentage" id="vmss-percentage" required>
+          </div>
+          <div class="form-inline">
+            <input type="checkbox" class="form-check-input" name="isVmssEnabled" id="vmss-enabled">
+            <label for="vmss-enabled">Allow Fault Injection</label>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Virtual Machines behind load balancer</h4>
+        </div>
+        <div class="panel-collapse collapse in panel-body">
+          <div class="section">
+            <label for="loadbalancer-percentage">Loadbalancer VM instance Percentage</label><div class="glyphicon glyphicon-question-sign" id="tooltip-loadbalancer-percentage"></div>
+            <input type="number" class="form-control" value="50" min="0" max="100" name="loadbalancerPercentage" id="loadbalancer-percentage" required>
+          </div>
+          <div class="form-inline">
+            <input type="checkbox" class="form-check-input" name="isLoadbalancerEnabled" id="loadbalancer-enabled">
+            <label for="loadbalancer-enabled">Allow Fault Injection</label>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <label for="azure-fault-injection-actions">Azure FI Actions</label><span class="required">*</span><div class="glyphicon glyphicon-question-sign" id="tooltip-azure-fault-injection-actions"></div>
+        <select class="form-control" multiple="multiple" id="azure-fault-injection-actions" name="azureFiActions" required></select>
+      </div>
+      <div class="button-overlap">
+        <button class="btn btn-default btn-prev" type="button" aria-controls="step-2">Previous</button>
+        <button class="btn btn-default btn-next" type="button" aria-controls="step-4">Next</button>
+      </div>
+    </fieldset>
+    <fieldset aria-label="Step Three" tabindex="-1" id="step-4">
+      <div class="panel-group panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Frequency In Minutes</h4>
+        </div>
+        <div class="panel-collapse collapse in panel-body">
+          <div class="section">
+            <label for="scheduler-frequency">Scheduler Frequency</label><div class="glyphicon glyphicon-question-sign" id="tooltip-scheduler-frequency"></div>
+            <input type="number" class="form-control" value="60" name="schedulerFrequency" id="scheduler-frequency" required>
+          </div>
+          <div class="section">
+            <label for="rollback-frequency">Power Cycle Schedule</label><div class="glyphicon glyphicon-question-sign" id="tooltip-rollback-frequency"></div>
+            <input type="number" class="form-control" value="30" name="rollbackFrequency" id="rollback-frequency" required>
+          </div>
+          <div class="section">
+            <label for="crawler-frequency">Crawler Frequency</label><div class="glyphicon glyphicon-question-sign" id="tooltip-crawler-frequency"></div>
+            <input type="number" class="form-control" value="60" name="crawlerFrequency" id="crawler-frequency" required>
+          </div>
+          <div class="section">
+            <label for="mean-time">Meantime between FI on a VM</label><div class="glyphicon glyphicon-question-sign" id="tooltip-meantime"></div>
+            <input type="number" class="form-control" name="meanTime" value="120" id="mean-time" required>
+          </div>
+        </div>
+      </div>
+      <div class="form-inline">
+        <input type="radio" class="form-check-input" name="isAzureFiStartedOrStopped" id="isAzureFiStarted">
+        <label for="isAzureFiStarted">Start Fault Injection</label>
+        <input type="radio" class="form-check-input" name="isAzureFiStartedOrStopped" id="isAzureFiStopped" checked="checked">
+        <label for="isAzureFiStopped">Stop Fault Injection</label>
+      </div>
+      <p class="button-overlap">
+        <button class="btn btn-default btn-prev" type="button" aria-controls="step-3">Previous</button>
+        <button class="btn btn-success" type="submit" id="submit">Configure and Deploy</button>
+        <button class="btn btn-danger" type="reset" id="reset">Cancel</button>
+      </p>
+    </fieldset>
+  </form>
+</section>
+
+<!--
+HTML Requirements
+
+1. Include .multi-step-form
+2. Define parents e.g. fieldset
+3. Each parent should own a unique ID with aria-label
+4. Each next/prev button owns aria-controls which points to unique ID of parents
+5. For validation each field should own required attribute
+
+<section class="multi-step-form">
+  <form>
+
+    <fieldset aria-label="Step One" tabindex="-1" id="step-1">
+      ...
+      <button class="btn-next" type="button" aria-controls="step-2">Next</button>
+    </fieldset>
+
+    <fieldset aria-label="Step Two" tabindex="-1" id="step-2">
+      ...
+      <button class="btn-prev" type="button" aria-controls="step-1">Previous</button>
+      <button class="btn-next" type="button" aria-controls="step-3">Next</button>
+    </fieldset>
+
+    <fieldset aria-label="Step Three" tabindex="-1" id="step-3">
+      ...
+      <button type="submit">Submit</button>
+      <button class="btn-edit" type="button">Edit</button>
+      <button type="reset">Start Over</button>
+    </fieldset>
+
+  </form>
+</section>
+-->

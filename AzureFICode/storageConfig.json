@@ -1,0 +1,11 @@
+{
+	"CommonLogsStorageAccount": "<randomalphanumeric>",
+	"ActivityLogTable": ".activityLogs",
+	"ResourceGroupCrawlerTable": ".resouceGroups",
+	"VirtualMachinesCrawlerTable": ".virtualMachines",
+	"DefaultRegion": "EastUS",
+	"AvailabilitySetsCrawlerTable": ".virtualMachines",
+	"ScaleSetsCrawlerTable": ".virtualMachines",
+	"AvailabilityZonesCrawlerTable": ".virtualMachines",
+	"BlackListStorageAccount":["CommonLogsStorageAccount"]
+}
